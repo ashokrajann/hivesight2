@@ -5,8 +5,8 @@ import {
   createBottomTabNavigator,
   createStackNavigator,
 } from 'react-navigation';
-import LibraryScreen from './src/views/LibraryScreen';
-import LessonScreen from './src/views/LessonScreen';
+import LibraryScreen from './src/features/library/containers/LibraryScreen';
+import LessonScreen from './src/features/library/containers/LessonScreen';
 import JourneyScreen from './src/views/JourneyScreen';
 import InsightsProfileScreen from './src/views/InsightsProfileScreen';
 import InsightsWallScreen from './src/views/InsightsWallScreen';
