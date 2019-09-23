@@ -7,19 +7,29 @@ import {
 } from 'react-navigation';
 import LibraryScreen from './src/features/library/containers/LibraryScreen';
 import LessonScreen from './src/features/library/containers/LessonScreen';
-import JourneyScreen from './src/views/JourneyScreen';
-import InsightsProfileScreen from './src/views/InsightsProfileScreen';
-import InsightsWallScreen from './src/views/InsightsWallScreen';
-import InsightsOverviewScreen from './src/views/InsightsOverviewScreen';
-import InsightsArchiveScreen from './src/views/InsightsArchiveScreen';
-import AccountScreen from './src/views/AccountScreen';
-import SignupScreen from './src/views/SignupScreen';
-import LoginScreen from './src/views/LoginScreen';
+import JourneyScreen from './src/features/journey/containers/JourneyScreen';
+import InsightsProfileScreen from './src/features/journey/containers/InsightsProfileScreen';
+import InsightsWallScreen from './src/features/journey/containers/InsightsWallScreen';
+import InsightsOverviewScreen from './src/features/journey/containers/InsightsOverviewScreen';
+import InsightsArchiveScreen from './src/features/journey/containers/InsightsArchiveScreen';
+import AccountScreen from './src/features/account/containers/AccountScreen';
+import SignupScreen from './src/features/onboarding/containers/SignupScreen';
+import LoginScreen from './src/features/onboarding/containers/LoginScreen';
 
 const LibraryTab = createStackNavigator({
   Library: LibraryScreen,
   Lesson: LessonScreen,
 });
+
+LibraryTab.navigationOptions = ({navigation}) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+  return {
+    tabBarVisible,
+  };
+};
 
 const JourneyTab = createStackNavigator({
   Journey: JourneyScreen,
